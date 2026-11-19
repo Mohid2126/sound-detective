@@ -33,6 +33,21 @@ html,body,[class*="css"] { font-family:'Space Grotesk',sans-serif; }
 [data-testid="stExpander"] { background:#171b24; border:1px solid #303744; border-radius:15px; }
 [data-testid="stProgress"] > div > div { background:var(--mint); }
 footer {visibility:hidden;}
+.stApp::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.24; background-image:linear-gradient(rgba(83,232,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(83,232,255,.12) 1px,transparent 1px); background-size:54px 54px; mask-image:linear-gradient(to bottom,black,transparent 82%); }
+.hero { background:linear-gradient(110deg,rgba(12,25,42,.96),rgba(32,23,63,.88) 58%,rgba(15,35,48,.92)); border:1px solid #4be8ff55; box-shadow:0 0 0 1px #bd70ff14 inset,0 18px 70px #0009,0 0 44px #28dfff14; }
+.hero:before { content:''; position:absolute; width:230px; height:230px; right:48px; top:4px; border-radius:50%; border:1px solid #62f5ff55; background:repeating-conic-gradient(from 0deg,transparent 0deg 17deg,#62f5ff20 18deg 19deg,transparent 20deg 30deg); box-shadow:0 0 38px #4be8ff22,inset 0 0 30px #4be8ff12; animation:radar 24s linear infinite; }
+.hero:after { content:'◉'; position:absolute; display:grid; place-items:center; width:230px; height:230px; right:48px; top:4px; border-radius:50%; color:#b7f36b; font:100px sans-serif; text-shadow:0 0 24px #b7f36b; background:radial-gradient(circle,rgba(73,244,255,.12) 0 2%,transparent 3% 32%,rgba(73,244,255,.09) 33% 34%,transparent 35%); animation:radar-pulse 3s ease-in-out infinite; }
+@keyframes radar { to { transform:rotate(360deg); } }
+@media(max-width:700px) { .hero { padding:25px 22px; } .hero:before,.hero:after { display:none; } .hero h1,.hero p,.eyebrow { position:relative; z-index:1; } }
+
+@keyframes radar-pulse { 50% { filter:drop-shadow(0 0 15px #55f2ff); opacity:.76; } }
+.eyebrow { color:#62f5ff; } .section-kicker { color:#b7f36b; }
+.stButton>button { border:1px solid #54eaff88; background:linear-gradient(100deg,#172f3a,#20233c); color:#effcff; box-shadow:0 0 16px #42eaff18; transition:all .2s ease; }
+.stButton>button:hover { border-color:#b7f36b; color:#eaffcb; box-shadow:0 0 22px #52f2ff55; transform:translateY(-1px); }
+.stButton>button[kind="primary"] { background:linear-gradient(100deg,#c1ff68,#70f5da); color:#07131b; border:0; box-shadow:0 0 24px #8dff7b55; }
+[data-testid="stAudioInput"], [data-testid="stMetric"], [data-testid="stExpander"] { background:linear-gradient(145deg,#101b27,#171b2a); border-color:#44ddf344; box-shadow:0 10px 34px #0004; }
+[data-testid="stProgress"] > div > div { background:linear-gradient(90deg,#56eaff,#b7f36b); box-shadow:0 0 12px #56eaff77; }
+
 </style>
 """, unsafe_allow_html=True)
 
